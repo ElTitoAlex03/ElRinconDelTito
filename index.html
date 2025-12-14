@@ -2,10 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>El Rincon del Tito Alex</title>
-
-<!-- Fuente tipo Netflix -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Mis Películas</title>
 
 <style>
 * {
@@ -15,73 +12,89 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #141414;
-    color: #ffffff;
+    color: white;
 }
 
-/* HEADER */
 header {
-    padding: 25px 50px;
+    padding: 20px 40px;
+    background-color: #141414;
     border-bottom: 2px solid #e50914;
 }
 
 header h1 {
     color: #e50914;
-    font-size: 2.2em;
-    font-weight: 700;
+    font-size: 2em;
 }
 
-/* SECCIONES */
 .section {
-    padding: 40px 50px;
+    padding: 30px 40px;
 }
 
 .section h2 {
     margin-bottom: 20px;
-    font-size: 1.4em;
-    font-weight: 600;
 }
 
-/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 /* TARJETAS */
 .card {
-    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
-    height: 300px;
-    border-radius: 10px;
-    padding: 20px;
+    height: 260px;
+    border-radius: 8px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+/* Oscurecer imagen */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.2)
+    );
 }
 
 .card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transform: scale(1.08);
+}
+
+/* Texto encima de la imagen */
+.card h3,
+.card span {
+    position: relative;
+    z-index: 1;
 }
 
 .card h3 {
-    font-size: 1.1em;
-    margin-bottom: 8px;
+    font-size: 1em;
+    margin-bottom: 5px;
 }
 
 .card span {
     color: #e50914;
-    font-weight: 600;
-}
-
-/* LINKS */
-a {
-    text-decoration: none;
-    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -89,7 +102,7 @@ a {
 <body>
 
 <header>
-    <h1>El Rincon Del Tito Alex</h1>
+    <h1>NETFLIX · Mis Películas</h1>
 </header>
 
 <div class="section">
@@ -98,43 +111,36 @@ a {
     <div class="grid">
 
         <a href="padrino.html">
-            <div class="card">
+            <div class="card" style="background-image: url('imagenes/padrino.jpg');">
                 <h3>El Padrino</h3>
                 <span>★★★★★</span>
             </div>
         </a>
 
         <a href="interstellar.html">
-            <div class="card" style="background-image: url('imagenes/interestellar.jpg');">
+            <div class="card" style="background-image: url('imagenes/interstellar.jpg');">
                 <h3>Interstellar</h3>
                 <span>★★★★☆</span>
             </div>
         </a>
 
         <a href="matrix.html">
-            <div class="card">
+            <div class="card" style="background-image: url('imagenes/matrix.jpg');">
                 <h3>Matrix</h3>
                 <span>★★★★★</span>
             </div>
         </a>
 
-        <a href="joker.html">
-            <div class="card">
-                <h3>Joker</h3>
-                <span>★★★★☆</span>
-            </div>
-        </a>
-
         <a href="inception.html">
-            <div class="card">
+            <div class="card" style="background-image: url('imagenes/inception.jpg');">
                 <h3>Inception</h3>
                 <span>★★★★☆</span>
             </div>
         </a>
 
-        <a href="oppenheimer.html">
-            <div class="card">
-                <h3>Oppenheimer</h3>
+        <a href="joker.html">
+            <div class="card" style="background-image: url('imagenes/joker.jpg');">
+                <h3>Joker</h3>
                 <span>★★★★☆</span>
             </div>
         </a>
